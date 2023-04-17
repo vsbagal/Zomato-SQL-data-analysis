@@ -1,5 +1,7 @@
 # Problem statement for zomato data analysis
 
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FVngo9p8IK7ZCWdQ1o2Lg89HcR8SVGzfig&usqp=CAU " width="900" height="300">
+
 1.What is the total amount each customer spent on zomato?
 
 2.How many days has each customer visited zomato?
