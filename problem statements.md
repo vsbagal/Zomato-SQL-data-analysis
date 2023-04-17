@@ -1,6 +1,5 @@
 # Problem statement for zomato data analysis
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FVngo9p8IK7ZCWdQ1o2Lg89HcR8SVGzfig&usqp=CAU " width="900" height="300">
 
 1.What is the total amount each customer spent on zomato?
 
@@ -21,3 +20,5 @@
 9.Rank all transactions of the customers
 
 10.Rank all transaction for each member whenever they are zomato gold member for every non gold member transaction mark as na
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FVngo9p8IK7ZCWdQ1o2Lg89HcR8SVGzfig&usqp=CAU " width="900" height="300">
