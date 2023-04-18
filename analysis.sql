@@ -7,3 +7,5 @@ GROUP BY s.userid;
 -- QUE2. How many days has each customer visited zomato?
 SELECT userid, count(distinct created_date) distinct_days
 FROM sales GROUP BY userid;
+
+
