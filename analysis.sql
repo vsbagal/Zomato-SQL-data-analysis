@@ -48,3 +48,17 @@ SELECT * FROM  (SELECT c. *, RANK() OVER (
                                ON s.userid = gs.userid
                                   AND created_date >= gold_signup_date) c)d
 WHERE  rnk = 1; 
+
+-- QUE7. Which item was purchased just before the customer became a member?
+SELECT * FROM (SELECT c.*, RANK() OVER (
+                   PARTITION BY userid
+                   ORDER BY created_date DESC ) rnk
+        FROM   (SELECT s.userid,
+                       s.created_date,
+                       s.product_id,
+                       gs.gold_signup_date
+                FROM   sales s
+                       INNER JOIN goldusers_signup gs
+                               ON s.userid = gs.userid
+                                  AND created_date <= gold_signup_date) c) gsd
+WHERE  rnk = 1; 
