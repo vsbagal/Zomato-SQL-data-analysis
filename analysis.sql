@@ -8,4 +8,8 @@ GROUP BY s.userid;
 SELECT userid, count(distinct created_date) distinct_days
 FROM sales GROUP BY userid;
 
-
+-- QUE3. What was the first product purchased by each customer?
+SELECT * FROM (
+SELECT *, RANK() OVER (partition by userid order by created_date)
+RNK FROM sales ) s where 
+RNK = 1;
