@@ -13,3 +13,11 @@ SELECT * FROM (
 SELECT *, RANK() OVER (partition by userid order by created_date)
 RNK FROM sales ) s where 
 RNK = 1;
+
+-- QUE4. What is the most purchased item on the menu & how many times was it purchased by all customers?
+SELECT userid, count(product_id) AS most_purchased_items from sales 
+WHERE product_id = (
+SELECT  product_id FROM sales GROUP BY product_id
+ORDER BY COUNT(product_id)  DESC LIMIT 1
+  ) 
+  GROUP BY userid;
