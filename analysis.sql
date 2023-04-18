@@ -36,3 +36,15 @@ SELECT * FROM
       ) s
   ) p
 WHERE rnk = 1;
+
+
+-- QUE6. Which item was purchased first by customers after they become a member?
+SELECT * FROM  (SELECT c. *, RANK() OVER (
+                   partition BY userid
+                   ORDER BY created_date ) rnk
+        FROM (SELECT s.userid, s.created_date, s.product_id, gs.gold_signup_date
+                FROM sales s
+                       INNER JOIN goldusers_signup gs
+                               ON s.userid = gs.userid
+                                  AND created_date >= gold_signup_date) c)d
+WHERE  rnk = 1; 
