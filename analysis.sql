@@ -79,3 +79,10 @@ FROM   (SELECT c.* , d.price
 					JOIN product d
 					ON c.product_id = d.product_id)e
 GROUP  BY userid; 
+
+
+-- QUE9. Rnk all transactions of the customers
+SELECT * , RANK()
+        OVER ( PARTITION BY userid
+          ORDER BY created_date  ) rnk
+          FROM sales; 
