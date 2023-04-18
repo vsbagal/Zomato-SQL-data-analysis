@@ -1,2 +1,2 @@
 # Zomato-SQL-data-analysis
-<img src="https://bucket-thesocialtalks.s3.amazonaws.com/static/article/2021/10/19/zomato-1200x600.jpg " width="900" height="300">
+<img src=" https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/967f19111202195.5ffdfc0e915cb.gif " width="900" height="300">
