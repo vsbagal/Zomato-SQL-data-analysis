@@ -21,3 +21,18 @@ SELECT  product_id FROM sales GROUP BY product_id
 ORDER BY COUNT(product_id)  DESC LIMIT 1
   ) 
   GROUP BY userid;
+  
+-- QUE5. Which item was most popular for each customer?
+SELECT * FROM
+  (
+    SELECT *, RANK() OVER(
+        partition by userid 
+        ORDER BY cnt desc
+      ) rnk 
+    FROM
+      (
+       SELECT userid, product_id, count(product_id) cnt 
+        FROM sales GROUP BY userid, product_id
+      ) s
+  ) p
+WHERE rnk = 1;
